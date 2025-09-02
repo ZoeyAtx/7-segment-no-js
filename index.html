@@ -1,24 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7-Segment Display</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
         <h1>7-Segment Display</h1>
+        <div class="segment-controls">
+            <label class="switch">
+                <input type="checkbox" id="toggle-segment-1" class="toggle" />
+                <span class="slider round"></span>
+            </label>
+            <label class="switch">
+                <input type="checkbox" id="toggle-segment-2" class="toggle" />
+                <span class="slider round"></span>
+            </label>
+            <label class="switch">
+                <input type="checkbox" id="toggle-segment-3" class="toggle" />
+                <span class="slider round"></span>
+            </label>
+            <label class="switch">
+                <input type="checkbox" id="toggle-segment-4" class="toggle" />
+                <span class="slider round"></span>
+            </label>
+        </div>
         <div class="seven-segment-display digit-8">
-
-            <input type="checkbox" id="toggle-segment-1" class="toggle"/>
-            <label for="toggle-segment-1"></label>
-            <input type="checkbox" id="toggle-segment-2" class="toggle"/>
-            <label for="toggle-segment-2"></label>
-            <input type="checkbox" id="toggle-segment-3" class="toggle"/>
-            <label for="toggle-segment-3"></label>
-            <input type="checkbox" id="toggle-segment-4" class="toggle"/>
-            <label for="toggle-segment-4"></label>
             <div class="segment horizontal segment-a">a</div>
             <div class="segment vertical segment-b">b</div>
             <div class="segment vertical segment-c">c</div>
@@ -29,4 +40,5 @@
         </div>
     </div>
 </body>
+
 </html>
