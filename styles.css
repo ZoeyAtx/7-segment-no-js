@@ -26,6 +26,7 @@ h1 {
     height: 270px;
     margin: 0 auto;
     border-radius: 10px;
+    color: #000;
 }
 
 /* Base styles for all segments */
@@ -36,6 +37,8 @@ h1 {
     opacity: 0.1;
     border-radius: 5px;
     transition: opacity 0.3s ease-in-out;
+    display: grid;
+    place-items: center;
 }
 
 /* Vertical Segments (b, c, e, f) */
@@ -94,8 +97,7 @@ h1 {
 }
 
 .digit-8 .segment {
-    opacity: 1;
-    background-color: #f00;
+    background-color: rgb(255, 0, 247);
 }
 
 .segment_controls {
@@ -143,11 +145,11 @@ h1 {
 }
 
 input:checked+.slider {
-    background-color: #2196F3;
+    background-color: #7921f3;
 }
 
 input:focus+.slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px #7921f3;
 }
 
 input:checked+.slider:before {
@@ -192,14 +194,14 @@ body:has(#toggle-segment-4:checked) {
 /* 1,4 */
 /* 0001, 0100 */
 .segment-a {
-    --checked-a1-off: var(--t4-bool) none;
-    --checked-a2-off: var(--t2-bool) none;
-    --checked-a1-on: var(--t2-bool) var(--t4-bool) block;
-    --checked-a2-on: var(--t2-bool) var(--t3-bool) block;
-    --checked-a3-on: var(--t2-bool) var(--t1-bool) block;
-    --checked-a4-on: var(--t4-bool) var(--t1-bool) block;
-    --checked-a5-on: var(--t4-bool) var(--t3-bool) block;
-    display:
+    --checked-a1-off: var(--t4-bool) 0;
+    --checked-a2-off: var(--t2-bool) 0;
+    --checked-a1-on: var(--t2-bool) var(--t4-bool) 1;
+    --checked-a2-on: var(--t2-bool) var(--t3-bool) 1;
+    --checked-a3-on: var(--t2-bool) var(--t1-bool) 1;
+    --checked-a4-on: var(--t4-bool) var(--t1-bool) 1;
+    --checked-a5-on: var(--t4-bool) var(--t3-bool) 1;
+    opacity:
         var(--checked-a1-on,
             var(--checked-a2-on,
                 var(--checked-a3-on,
@@ -212,12 +214,12 @@ body:has(#toggle-segment-4:checked) {
 /* 5, 6 */
 /* 0101, 0110 */
 .segment-b {
-    --checked-b1-off: var(--t2-bool) var(--t4-bool) none;
-    --checked-b2-off: var(--t2-bool) var(--t3-bool) none;
-    --checked-b1-on: var(--t2-bool) var(--t4-bool) var(--t1-bool) block;
-    --checked-b2-on: var(--t2-bool) var(--t4-bool) var(--t3-bool) block;
-    --checked-b3-on: var(--t2-bool) var(--t1-bool) var(--t3-bool) block;
-    display:
+    --checked-b1-off: var(--t2-bool) var(--t4-bool) 0;
+    --checked-b2-off: var(--t2-bool) var(--t3-bool) 0;
+    --checked-b1-on: var(--t2-bool) var(--t4-bool) var(--t1-bool) 1;
+    --checked-b2-on: var(--t2-bool) var(--t4-bool) var(--t3-bool) 1;
+    --checked-b3-on: var(--t2-bool) var(--t1-bool) var(--t3-bool) 1;
+    opacity:
         var(--checked-b1-on,
             var(--checked-b2-on,
                 var(--checked-b3-on,
@@ -228,11 +230,11 @@ body:has(#toggle-segment-4:checked) {
 /* 2 */
 /* 0010 */
 .segment-c {
-    --checked-c1-off: var(--t3-bool) none;
-    --checked-c1-on: var(--t3-bool) var(--t1-bool) block;
-    --checked-c2-on: var(--t3-bool) var(--t2-bool) block;
-    --checked-c3-on: var(--t3-bool) var(--t4-bool) block;
-    display:
+    --checked-c1-off: var(--t3-bool) 0;
+    --checked-c1-on: var(--t3-bool) var(--t1-bool) 1;
+    --checked-c2-on: var(--t3-bool) var(--t2-bool) 1;
+    --checked-c3-on: var(--t3-bool) var(--t4-bool) 1;
+    opacity:
         var(--checked-c1-on,
             var(--checked-c2-on,
                 var(--checked-c3-on,
@@ -242,16 +244,16 @@ body:has(#toggle-segment-4:checked) {
 /* 1,4,7 */
 /* 0001, 0100, 0111 */
 .segment-d {
-    --checked-d1-off: var(--t4-bool) none;
-    --checked-d2-off: var(--t2-bool) none;
-    --checked-d3-off: var(--t2-bool) var(--t3-bool) var(--t4-bool) none;
-    --checked-d1-on: var(--t4-bool) var(--t1-bool) block;
-    --checked-d2-on: var(--t4-bool) var(--t2-bool) block;
-    --checked-d3-on: var(--t4-bool) var(--t3-bool) block;
-    --checked-d4-on: var(--t2-bool) var(--t1-bool) block;
-    --checked-d5-on: var(--t2-bool) var(--t3-bool) block;
-    --checked-d6-on: var(--t2-bool) var(--t3-bool) var(--t4-bool) var(--t1-bool) block;
-    display:
+    --checked-d1-off: var(--t4-bool) 0;
+    --checked-d2-off: var(--t2-bool) 0;
+    --checked-d3-off: var(--t2-bool) var(--t3-bool) var(--t4-bool) 0;
+    --checked-d1-on: var(--t4-bool) var(--t1-bool) 1;
+    --checked-d2-on: var(--t4-bool) var(--t2-bool) 1;
+    --checked-d3-on: var(--t4-bool) var(--t3-bool) 1;
+    --checked-d4-on: var(--t2-bool) var(--t1-bool) 1;
+    --checked-d5-on: var(--t2-bool) var(--t3-bool) 1;
+    --checked-d6-on: var(--t2-bool) var(--t3-bool) var(--t4-bool) var(--t1-bool) 1;
+    opacity:
         var(--checked-d6-on,
             var(--checked-d3-off,
                 var(--checked-d1-on,
@@ -266,16 +268,16 @@ body:has(#toggle-segment-4:checked) {
 /* 1,3,4,5,7,9 */
 /* 0001, 0011, 0100, 0101, 0111, 1001 */
 .segment-e {
-    --checked-e1-off: var(--t4-bool) none;
-    --checked-e2-off: var(--t4-bool) var(--t3-bool) none;
-    --checked-e3-off: var(--t2-bool) none;
-    --checked-e4-off: var(--t2-bool) var(--t4-bool) none;
-    --checked-e5-off: var(--t1-bool) var(--t4-bool) none;
-    --checked-e6-off: var(--t2-bool) var(--t3-bool) var(--t4-bool) none;
-    --checked-e1-on: var(--t2-bool) var(--t1-bool) block;
-    --checked-e2-on: var(--t2-bool) var(--t3-bool) block;
-    --checked-e3-on: var(--t2-bool) var(--t3-bool) var(--t4-bool) var(--t1-bool) block;
-    display:
+    --checked-e1-off: var(--t4-bool) 0;
+    --checked-e2-off: var(--t4-bool) var(--t3-bool) 0;
+    --checked-e3-off: var(--t2-bool) 0;
+    --checked-e4-off: var(--t2-bool) var(--t4-bool) 0;
+    --checked-e5-off: var(--t1-bool) var(--t4-bool) 0;
+    --checked-e6-off: var(--t2-bool) var(--t3-bool) var(--t4-bool) 0;
+    --checked-e1-on: var(--t2-bool) var(--t1-bool) 1;
+    --checked-e2-on: var(--t2-bool) var(--t3-bool) 1;
+    --checked-e3-on: var(--t2-bool) var(--t3-bool) var(--t4-bool) var(--t1-bool) 1;
+    opacity:
         var(--checked-e3-on,
             var(--checked-e6-off,
                 var(--checked-e1-on,
@@ -291,17 +293,17 @@ body:has(#toggle-segment-4:checked) {
 /* 1,2,3,7 */
 /* 0001, 0010, 0011, 0111 */
 .segment-f {
-    --checked-f1-off: var(--t4-bool) none;
-    --checked-f2-off: var(--t4-bool) var(--t3-bool) none;
-    --checked-f3-off: var(--t3-bool) none;
-    --checked-f4-off: var(--t2-bool) var(--t3-bool) var(--t4-bool) none;
-    --checked-f1-on: var(--t2-bool) var(--t1-bool) block;
-    --checked-f5-on: var(--t2-bool) var(--t4-bool) block;
-    --checked-f2-on: var(--t2-bool) var(--t3-bool) block;
-    --checked-f3-on: var(--t1-bool) var(--t3-bool) block;
-    --checked-f6-on: var(--t1-bool) var(--t4-bool) block;
-    --checked-f4-on: var(--t2-bool) var(--t3-bool) var(--t4-bool) var(--t1-bool) block;
-    display:
+    --checked-f1-off: var(--t4-bool) 0;
+    --checked-f2-off: var(--t4-bool) var(--t3-bool) 0;
+    --checked-f3-off: var(--t3-bool) 0;
+    --checked-f4-off: var(--t2-bool) var(--t3-bool) var(--t4-bool) 0;
+    --checked-f1-on: var(--t2-bool) var(--t1-bool) 1;
+    --checked-f5-on: var(--t2-bool) var(--t4-bool) 1;
+    --checked-f2-on: var(--t2-bool) var(--t3-bool) 1;
+    --checked-f3-on: var(--t1-bool) var(--t3-bool) 1;
+    --checked-f6-on: var(--t1-bool) var(--t4-bool) 1;
+    --checked-f4-on: var(--t2-bool) var(--t3-bool) var(--t4-bool) var(--t1-bool) 1;
+    opacity:
         var(--checked-f3-on,
             var(--checked-f4-off,
                 var(--checked-f1-on,
@@ -317,17 +319,17 @@ body:has(#toggle-segment-4:checked) {
 /* 0,1,7 */
 /* 0000, 0001, 0111 */
 .segment-g {
-    --checked-g1-off: none;
-    --checked-g3-off: var(--t4-bool) none;
-    --checked-g4-off: var(--t2-bool) var(--t3-bool) var(--t4-bool) none;
-    --checked-g1-on: var(--t2-bool) block;
-    --checked-g2-on: var(--t3-bool) block;
-    --checked-g3-on: var(--t1-bool) block;
-    --checked-g4-on: var(--t4-bool) var(--t1-bool) block;
-    --checked-g5-on: var(--t4-bool) var(--t2-bool) block;
-    --checked-g6-on: var(--t4-bool) var(--t3-bool) block;
-    --checked-g7-on: var(--t2-bool) var(--t3-bool) var(--t4-bool) var(--t1-bool) block;
-    display:
+    --checked-g1-off: 0;
+    --checked-g3-off: var(--t4-bool) 0;
+    --checked-g4-off: var(--t2-bool) var(--t3-bool) var(--t4-bool) 0;
+    --checked-g1-on: var(--t2-bool) 1;
+    --checked-g2-on: var(--t3-bool) 1;
+    --checked-g3-on: var(--t1-bool) 1;
+    --checked-g4-on: var(--t4-bool) var(--t1-bool) 1;
+    --checked-g5-on: var(--t4-bool) var(--t2-bool) 1;
+    --checked-g6-on: var(--t4-bool) var(--t3-bool) 1;
+    --checked-g7-on: var(--t2-bool) var(--t3-bool) var(--t4-bool) var(--t1-bool) 1;
+    opacity:
         var(--checked-g4-off,
             var(--checked-g1-on,
                 var(--checked-g2-on,
