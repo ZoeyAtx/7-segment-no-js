@@ -4,7 +4,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #333;
+    background-color: #383737;
     font-family: 'Inter', sans-serif;
     color: #ccc;
 }
@@ -19,22 +19,10 @@ h1 {
     color: #fff;
 }
 
-/* 7-Segment Display Container */
-.seven-segment-display {
-    position: relative;
-    width: 150px;
-    height: 270px;
-    margin: 0 auto;
-    border-radius: 10px;
-    color: #000;
-}
-
 /* Base styles for all segments */
 .segment {
     position: absolute;
-    background-color: #333;
-    /* Color when 'off' */
-    opacity: 0.1;
+    background-color: #bb21f3;
     border-radius: 5px;
     transition: opacity 0.3s ease-in-out;
     display: grid;
@@ -51,53 +39,6 @@ h1 {
 .segment.horizontal {
     width: 100px;
     height: 30px;
-}
-
-/* Segment Positioning */
-/* Segment A (top horizontal) */
-.segment-a {
-    top: 0;
-    left: 25px;
-}
-
-/* Segment B (top right vertical) */
-.segment-b {
-    top: 25px;
-    right: 0;
-}
-
-/* Segment C (bottom right vertical) */
-.segment-c {
-    bottom: 25px;
-    right: 0;
-}
-
-/* Segment D (bottom horizontal) */
-.segment-d {
-    bottom: 0;
-    left: 25px;
-}
-
-/* Segment E (bottom left vertical) */
-.segment-e {
-    bottom: 25px;
-    left: 0;
-}
-
-/* Segment F (top left vertical) */
-.segment-f {
-    top: 25px;
-    left: 0;
-}
-
-/* Segment G (middle horizontal) */
-.segment-g {
-    top: 120px;
-    left: 25px;
-}
-
-.digit-8 .segment {
-    background-color: rgb(255, 0, 247);
 }
 
 .segment_controls {
@@ -157,26 +98,34 @@ input:checked+.slider:before {
 }
 
 html {
-    --t1-bool: initial;
-    --t2-bool: initial;
-    --t3-bool: initial;
-    --t4-bool: initial;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 0;
+    --_t4: 1;
 }
 
-body:has(#toggle-segment-1:checked) {
-    --t1-bool: ;
+body:has(#toggle-1:checked) {
+    --t1: 1;
+    --_t1: 0;
 }
 
-body:has(#toggle-segment-2:checked) {
-    --t2-bool: ;
+body:has(#toggle-2:checked) {
+    --t2: 1;
+    --_t2: 0;
 }
 
-body:has(#toggle-segment-3:checked) {
-    --t3-bool: ;
+body:has(#toggle-3:checked) {
+    --t3: 1;
+    --_t3: 0;
 }
 
-body:has(#toggle-segment-4:checked) {
-    --t4-bool: ;
+body:has(#toggle-4:checked) {
+    --t4: 1;
+    --_t4: 0;
 }
 
 /* 
@@ -190,154 +139,75 @@ body:has(#toggle-segment-4:checked) {
       7  0111
       8  1000
       9  1001 
-        */
-/* 1,4 */
-/* 0001, 0100 */
-.segment-a {
-    --checked-a1-off: var(--t4-bool) 0;
-    --checked-a2-off: var(--t2-bool) 0;
-    --checked-a1-on: var(--t2-bool) var(--t4-bool) 1;
-    --checked-a2-on: var(--t2-bool) var(--t3-bool) 1;
-    --checked-a3-on: var(--t2-bool) var(--t1-bool) 1;
-    --checked-a4-on: var(--t4-bool) var(--t1-bool) 1;
-    --checked-a5-on: var(--t4-bool) var(--t3-bool) 1;
-    opacity:
-        var(--checked-a1-on,
-            var(--checked-a2-on,
-                var(--checked-a3-on,
-                    var(--checked-a4-on,
-                        var(--checked-a5-on,
-                            var(--checked-a1-off,
-                                var(--checked-a2-off)))))));
+    */
+.seven-segment-display {
+    --n0: calc(var(--_t1) * var(--_t2) * var(--_t3) * var(--_t4));
+    --n1: calc(var(--_t1) * var(--_t2) * var(--_t3) * var(--t4));
+    --n2: calc(var(--_t1) * var(--_t2) * var(--t3) * var(--_t4));
+    --n3: calc(var(--_t1) * var(--_t2) * var(--t3) * var(--t4));
+    --n4: calc(var(--_t1) * var(--t2) * var(--_t3) * var(--_t4));
+    --n5: calc(var(--_t1) * var(--t2) * var(--_t3) * var(--t4));
+    --n6: calc(var(--_t1) * var(--t2) * var(--t3) * var(--_t4));
+    --n7: calc(var(--_t1) * var(--t2) * var(--t3) * var(--t4));
+    --n8: calc(var(--t1) * var(--_t2) * var(--_t3) * var(--_t4));
+    --n9: calc(var(--t1) * var(--_t2) * var(--_t3) * var(--t4));
+
+    --digit: calc(var(--n0) + var(--n1) + var(--n2) + var(--n3) + var(--n4) + var(--n5) + var(--n6) + var(--n7) + var(--n8) + var(--n9));
+
+    --a: calc(var(--digit) - var(--n1) - var(--n4));
+    --b: calc(var(--digit) - var(--n5) - var(--n6));
+    --c: calc(var(--digit) - var(--n2));
+    --d: calc(var(--digit) - var(--n1) - var(--n4) - var(--n7));
+    --e: calc(var(--digit) - var(--n1) - var(--n3) - var(--n4) - var(--n5) - var(--n7) - var(--n9));
+    --f: calc(var(--digit) - var(--n1) - var(--n2) - var(--n3) - var(--n7));
+    --g: calc(var(--digit) - var(--n0) - var(--n1) - var(--n7));
+
+    position: relative;
+    width: 150px;
+    height: 270px;
+    margin: 0 auto;
+    border-radius: 10px;
+    color: #000;
 }
 
-/* 5, 6 */
-/* 0101, 0110 */
-.segment-b {
-    --checked-b1-off: var(--t2-bool) var(--t4-bool) 0;
-    --checked-b2-off: var(--t2-bool) var(--t3-bool) 0;
-    --checked-b1-on: var(--t2-bool) var(--t4-bool) var(--t1-bool) 1;
-    --checked-b2-on: var(--t2-bool) var(--t4-bool) var(--t3-bool) 1;
-    --checked-b3-on: var(--t2-bool) var(--t1-bool) var(--t3-bool) 1;
-    opacity:
-        var(--checked-b1-on,
-            var(--checked-b2-on,
-                var(--checked-b3-on,
-                    var(--checked-b1-off,
-                        var(--checked-b2-off)))));
+.a {
+    opacity: var(--a);
+    top: 0;
+    left: 25px;
 }
 
-/* 2 */
-/* 0010 */
-.segment-c {
-    --checked-c1-off: var(--t3-bool) 0;
-    --checked-c1-on: var(--t3-bool) var(--t1-bool) 1;
-    --checked-c2-on: var(--t3-bool) var(--t2-bool) 1;
-    --checked-c3-on: var(--t3-bool) var(--t4-bool) 1;
-    opacity:
-        var(--checked-c1-on,
-            var(--checked-c2-on,
-                var(--checked-c3-on,
-                    var(--checked-c1-off))));
+.b {
+    opacity: var(--b);
+    top: 25px;
+    right: 0;
 }
 
-/* 1,4,7 */
-/* 0001, 0100, 0111 */
-.segment-d {
-    --checked-d1-off: var(--t4-bool) 0;
-    --checked-d2-off: var(--t2-bool) 0;
-    --checked-d3-off: var(--t2-bool) var(--t3-bool) var(--t4-bool) 0;
-    --checked-d1-on: var(--t4-bool) var(--t1-bool) 1;
-    --checked-d2-on: var(--t4-bool) var(--t2-bool) 1;
-    --checked-d3-on: var(--t4-bool) var(--t3-bool) 1;
-    --checked-d4-on: var(--t2-bool) var(--t1-bool) 1;
-    --checked-d5-on: var(--t2-bool) var(--t3-bool) 1;
-    --checked-d6-on: var(--t2-bool) var(--t3-bool) var(--t4-bool) var(--t1-bool) 1;
-    opacity:
-        var(--checked-d6-on,
-            var(--checked-d3-off,
-                var(--checked-d1-on,
-                    var(--checked-d2-on,
-                        var(--checked-d3-on,
-                            var(--checked-d4-on,
-                                var(--checked-d5-on,
-                                    var(--checked-d1-off,
-                                        var(--checked-d2-off)))))))));
+.c {
+    opacity: var(--c);
+    bottom: 25px;
+    right: 0px;
 }
 
-/* 1,3,4,5,7,9 */
-/* 0001, 0011, 0100, 0101, 0111, 1001 */
-.segment-e {
-    --checked-e1-off: var(--t4-bool) 0;
-    --checked-e2-off: var(--t4-bool) var(--t3-bool) 0;
-    --checked-e3-off: var(--t2-bool) 0;
-    --checked-e4-off: var(--t2-bool) var(--t4-bool) 0;
-    --checked-e5-off: var(--t1-bool) var(--t4-bool) 0;
-    --checked-e6-off: var(--t2-bool) var(--t3-bool) var(--t4-bool) 0;
-    --checked-e1-on: var(--t2-bool) var(--t1-bool) 1;
-    --checked-e2-on: var(--t2-bool) var(--t3-bool) 1;
-    --checked-e3-on: var(--t2-bool) var(--t3-bool) var(--t4-bool) var(--t1-bool) 1;
-    opacity:
-        var(--checked-e3-on,
-            var(--checked-e6-off,
-                var(--checked-e1-on,
-                    var(--checked-e2-on,
-                        var(--checked-e1-off,
-                            var(--checked-e2-off,
-                                var(--checked-e3-off,
-                                    var(--checked-e4-off,
-                                        var(--checked-e5-off,
-                                            var(--checked-e6-off))))))))));
+.d {
+    opacity: var(--d);
+    bottom: 0;
+    left: 25px;
 }
 
-/* 1,2,3,7 */
-/* 0001, 0010, 0011, 0111 */
-.segment-f {
-    --checked-f1-off: var(--t4-bool) 0;
-    --checked-f2-off: var(--t4-bool) var(--t3-bool) 0;
-    --checked-f3-off: var(--t3-bool) 0;
-    --checked-f4-off: var(--t2-bool) var(--t3-bool) var(--t4-bool) 0;
-    --checked-f1-on: var(--t2-bool) var(--t1-bool) 1;
-    --checked-f5-on: var(--t2-bool) var(--t4-bool) 1;
-    --checked-f2-on: var(--t2-bool) var(--t3-bool) 1;
-    --checked-f3-on: var(--t1-bool) var(--t3-bool) 1;
-    --checked-f6-on: var(--t1-bool) var(--t4-bool) 1;
-    --checked-f4-on: var(--t2-bool) var(--t3-bool) var(--t4-bool) var(--t1-bool) 1;
-    opacity:
-        var(--checked-f3-on,
-            var(--checked-f4-off,
-                var(--checked-f1-on,
-                    var(--checked-f2-on,
-                        var(--checked-f4-on,
-                            var(--checked-f5-on,
-                                var(--checked-f6-on,
-                                    var(--checked-f1-off,
-                                        var(--checked-f2-off,
-                                            var(--checked-f3-off))))))))));
+.e {
+    opacity: var(--e);
+    bottom: 25px;
+    left: 0;
 }
 
-/* 0,1,7 */
-/* 0000, 0001, 0111 */
-.segment-g {
-    --checked-g1-off: 0;
-    --checked-g3-off: var(--t4-bool) 0;
-    --checked-g4-off: var(--t2-bool) var(--t3-bool) var(--t4-bool) 0;
-    --checked-g1-on: var(--t2-bool) 1;
-    --checked-g2-on: var(--t3-bool) 1;
-    --checked-g3-on: var(--t1-bool) 1;
-    --checked-g4-on: var(--t4-bool) var(--t1-bool) 1;
-    --checked-g5-on: var(--t4-bool) var(--t2-bool) 1;
-    --checked-g6-on: var(--t4-bool) var(--t3-bool) 1;
-    --checked-g7-on: var(--t2-bool) var(--t3-bool) var(--t4-bool) var(--t1-bool) 1;
-    opacity:
-        var(--checked-g4-off,
-            var(--checked-g1-on,
-                var(--checked-g2-on,
-                    var(--checked-g3-on,
-                        var(--checked-g1-on,
-                            var(--checked-g2-on,
-                                var(--checked-g4-on,
-                                    var(--checked-g1-off,
-                                        var(--checked-g2-off,
-                                            var(--checked-g3-off))))))))));
+.f {
+    opacity: var(--f);
+    top: 25px;
+    left: 0;
+}
+
+.g {
+    opacity: var(--g);
+    top: 120px;
+    left: 25px;
 }
