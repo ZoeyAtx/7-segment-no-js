@@ -182,6 +182,7 @@ html{
     --checkbox29: none;
     --checkbox30: none;
     --checkbox31: none;
+    --checkbox32: none;
 }
 
 .ch0{
@@ -280,197 +281,428 @@ html{
 .ch31{
     display: var(--checkbox31);
 }
+.ch32{
+    display: var(--checkbox32);
+}
 
 /* Show the next checkbox when the current one is checked */
 html:has(.ch0 input:checked) {
     --checkbox1: block;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 0;
+    --_t5: 1;
 }
 html:has(.ch1 input:checked) {
     --checkbox2: block;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 1;
+    --_t5: 0;
 }
 html:has(.ch2 input:checked) {
     --checkbox3: block;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 1;
+    --_t4: 0;
+    --t5: 0;
+    --_t5: 1;
 }
 html:has(.ch3 input:checked) {
     --checkbox4: block;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 1;
+    --_t4: 0;
+    --t5: 1;
+    --_t5: 0;
 }
 html:has(.ch4 input:checked) {
     --checkbox5: block;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 1;
+    --_t3: 0;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 0;
+    --_t5: 1;
 }
 html:has(.ch5 input:checked) {
     --checkbox6: block;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 1;
+    --_t3: 0;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 1;
+    --_t5: 0;
 }
 html:has(.ch6 input:checked) {
     --checkbox7: block;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 1;
+    --_t3: 0;
+    --t4: 1;
+    --_t4: 0;
+    --t5: 0;
+    --_t5: 1;
 }
 html:has(.ch7 input:checked) {
     --checkbox8: block;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 1;
+    --_t3: 0;
+    --t4: 1;
+    --_t4: 0;
+    --t5: 1;
+    --_t5: 0;
 }
 html:has(.ch8 input:checked) {
     --checkbox9: block;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 1;
+    --_t2: 0;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 0;
+    --_t5: 1;
 }
 html:has(.ch9 input:checked) {
     --checkbox10: block;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 1;
+    --_t2: 0;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 1;
+    --_t5: 0;
 }
 html:has(.ch10 input:checked) {
     --checkbox11: block;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 1;
+    --_t2: 0;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 1;
+    --_t4: 0;
+    --t5: 0;
+    --_t5: 1;
 }
 html:has(.ch11 input:checked) {
     --checkbox12: block;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 1;
+    --_t2: 0;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 1;
+    --_t4: 0;
+    --t5: 1;
+    --_t5: 0;
 }
 html:has(.ch12 input:checked) {
     --checkbox13: block;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 1;
+    --_t2: 0;
+    --t3: 1;
+    --_t3: 0;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 0;
+    --_t5: 1;
 }
 html:has(.ch13 input:checked) {
     --checkbox14: block;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 1;
+    --_t2: 0;
+    --t3: 1;
+    --_t3: 0;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 1;
+    --_t5: 0;
 }
 html:has(.ch14 input:checked) {
     --checkbox15: block;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 1;
+    --_t2: 0;
+    --t3: 1;
+    --_t3: 0;
+    --t4: 1;
+    --_t4: 0;
+    --t5: 0;
+    --_t5: 1;
 }
 html:has(.ch15 input:checked) {
     --checkbox16: block;
+    --t1: 0;
+    --_t1: 1;
+    --t2: 1;
+    --_t2: 0;
+    --t3: 1;
+    --_t3: 0;
+    --t4: 1;
+    --_t4: 0;
+    --t5: 1;
+    --_t5: 0;
 }
 html:has(.ch16 input:checked) {
     --checkbox17: block;
+    --t1: 1;
+    --_t1: 0;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 0;
+    --_t5: 1;
 }
 html:has(.ch17 input:checked) {
     --checkbox18: block;
+    --t1: 1;
+    --_t1: 0;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 1;
+    --_t5: 0;
 }
 html:has(.ch18 input:checked) {
     --checkbox19: block;
+    --t1: 1;
+    --_t1: 0;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 1;
+    --_t4: 0;
+    --t5: 0;
+    --_t5: 1;
 }
 html:has(.ch19 input:checked) {
     --checkbox20: block;
+    --t1: 1;
+    --_t1: 0;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 1;
+    --_t4: 0;
+    --t5: 1;
+    --_t5: 0;
 }
 html:has(.ch20 input:checked) {
     --checkbox21: block;
+    --t1: 1;
+    --_t1: 0;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 1;
+    --_t3: 0;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 0;
+    --_t5: 1;
 }
 html:has(.ch21 input:checked) {
     --checkbox22: block;
+    --t1: 1;
+    --_t1: 0;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 1;
+    --_t3: 0;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 1;
+    --_t5: 0;
 }
 html:has(.ch22 input:checked) {
     --checkbox23: block;
+    --t1: 1;
+    --_t1: 0;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 1;
+    --_t3: 0;
+    --t4: 1;
+    --_t4: 0;
+    --t5: 0;
+    --_t5: 1;
 }
 html:has(.ch23 input:checked) {
     --checkbox24: block;
+    --t1: 1;
+    --_t1: 0;
+    --t2: 0;
+    --_t2: 1;
+    --t3: 1;
+    --_t3: 0;
+    --t4: 1;
+    --_t4: 0;
+    --t5: 1;
+    --_t5: 0;
 }
 html:has(.ch24 input:checked) {
     --checkbox25: block;
+    --t1: 1;
+    --_t1: 0;
+    --t2: 1;
+    --_t2: 0;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 0;
+    --_t5: 1;
 }
 html:has(.ch25 input:checked) {
     --checkbox26: block;
+    --t1: 1;
+    --_t1: 0;
+    --t2: 1;
+    --_t2: 0;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 1;
+    --_t5: 0;
 }
 html:has(.ch26 input:checked) {
     --checkbox27: block;
+    --t1: 1;
+    --_t1: 0;
+    --t2: 1;
+    --_t2: 0;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 1;
+    --_t4: 0;
+    --t5: 0;
+    --_t5: 1;
 }
 html:has(.ch27 input:checked) {
     --checkbox28: block;
+    --t1: 1;
+    --_t1: 0;
+    --t2: 1;
+    --_t2: 0;
+    --t3: 0;
+    --_t3: 1;
+    --t4: 1;
+    --_t4: 0;
+    --t5: 1;
+    --_t5: 0;
 }
 html:has(.ch28 input:checked) {
     --checkbox29: block;
+    --t1: 1;
+    --_t1: 0;
+    --t2: 1;
+    --_t2: 0;
+    --t3: 1;
+    --_t3: 0;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 0;
+    --_t5: 1;
 }
 html:has(.ch29 input:checked) {
     --checkbox30: block;
+    --t1: 1;
+    --_t1: 0;
+    --t2: 1;
+    --_t2: 0;
+    --t3: 1;
+    --_t3: 0;
+    --t4: 0;
+    --_t4: 1;
+    --t5: 1;
+    --_t5: 0;
 }
 html:has(.ch30 input:checked) {
     --checkbox31: block;
-}
-
-/* Hide the next checkbox when the current one is checked */
-
-html:has(.ch1 input:checked) {
-    --checkbox0: none;
-}
-html:has(.ch2 input:checked) {
-    --checkbox1: none;
-}
-html:has(.ch3 input:checked) {
-    --checkbox2: none;
-}
-html:has(.ch4 input:checked) {
-    --checkbox3: none;
-}
-html:has(.ch5 input:checked) {
-    --checkbox4: none;
-}
-html:has(.ch6 input:checked) {
-    --checkbox5: none;
-}
-html:has(.ch7 input:checked) {
-    --checkbox6: none;
-}
-html:has(.ch8 input:checked) {
-    --checkbox7: none;
-}
-html:has(.ch9 input:checked) {
-    --checkbox8: none;
-}
-html:has(.ch10 input:checked) {
-    --checkbox9: none;
-}
-html:has(.ch11 input:checked) {
-    --checkbox10: none;
-}
-html:has(.ch12 input:checked) {
-    --checkbox11: none;
-}
-html:has(.ch13 input:checked) {
-    --checkbox12: none;
-}
-html:has(.ch14 input:checked) {
-    --checkbox13: none;
-}
-html:has(.ch15 input:checked) {
-    --checkbox14: none;
-}
-html:has(.ch16 input:checked) {
-    --checkbox15: none;
-}
-html:has(.ch17 input:checked) {
-    --checkbox16: none;
-}
-html:has(.ch18 input:checked) {
-    --checkbox17: none;
-}
-html:has(.ch19 input:checked) {
-    --checkbox18: none;
-}
-html:has(.ch20 input:checked) {
-    --checkbox19: none;
-}
-html:has(.ch21 input:checked) {
-    --checkbox20: none;
-}
-html:has(.ch22 input:checked) {
-    --checkbox21: none;
-}
-html:has(.ch23 input:checked) {
-    --checkbox22: none;
-}
-html:has(.ch24 input:checked) {
-    --checkbox23: none;
-}
-html:has(.ch25 input:checked) {
-    --checkbox24: none;
-}
-html:has(.ch26 input:checked) {
-    --checkbox25: none;
-}
-html:has(.ch27 input:checked) {
-    --checkbox26: none;
-}
-html:has(.ch28 input:checked) {
-    --checkbox27: none;
-}
-html:has(.ch29 input:checked) {
-    --checkbox28: none;
-}
-html:has(.ch30 input:checked) {
-    --checkbox29: none;
+    --t1: 1;
+    --_t1: 0;
+    --t2: 1;
+    --_t2: 0;
+    --t3: 1;
+    --_t3: 0;
+    --t4: 1;
+    --_t4: 0;
+    --t5: 0;
+    --_t5: 1;
 }
 html:has(.ch31 input:checked) {
-    --checkbox30: none;
+    --checkbox32: block;
+    --t1: 1;
+    --_t1: 0;
+    --t2: 1;
+    --_t2: 0;
+    --t3: 1;
+    --_t3: 0;
+    --t4: 1;
+    --_t4: 0;
+    --t5: 1;
+    --_t5: 0;
 }
+
 
 /* Vytvoření ikonky zaškrtnutí */
 
