@@ -6,7 +6,7 @@ body {
     margin: 0;
     background-color: #383737;
     font-family: 'Inter', sans-serif;
-    color: #ccc;
+    color: #b66262;
 }
 
 .container {
@@ -96,6 +96,384 @@ input:focus+.slider {
 input:checked+.slider:before {
     transform: translateY(26px);
 }
+
+.hidden {
+    display: none;
+}
+
+.controls:hover {
+    background-color: #7921f3;
+}
+
+/* Skrytí originálního checkboxu */
+input[type="checkbox"] {
+  position: absolute; /* Umožní překrýt prvek */
+  opacity: 0;        /* Úplně ho skryje */
+  width: 0;
+  height: 0;
+}
+
+/* Styly pro vlastní zaškrtávací políčko (span) */
+.checkmark {
+  position: absolute;
+  top: 0px;
+  left: 50px;
+  height: 25px;
+  width: 25px;
+  background-color: #eee; /* Barva pozadí */
+  border: 2px solid #ccc; /* Rámeček */
+  border-radius: 4px;     /* Zaoblené rohy */
+}
+
+/* Umístění textu/obsahu labelu vedle zaškrtávacího políčka */
+.plus_label {
+  position: relative;
+  padding-left: 35px; /* Mezera pro checkbox */
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; /* Zabrání výběru textu při kliknutí */
+}
+
+/* Po najetí myši změní barvu pozadí */
+.plus_label:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* Po zaškrtnutí změní barvu pozadí */
+.plus_label input:checked ~ .checkmark {
+  background-color: #7921f3; /* */
+  border-color: #7921f3;
+  transform: translateX(50px); 
+}
+
+html{
+    --checkbox0: block;
+    --checkbox1: none;
+    --checkbox2: none;
+    --checkbox3: none;
+    --checkbox4: none;
+    --checkbox5: none;
+    --checkbox6: none;
+    --checkbox7: none;
+    --checkbox8: none;
+    --checkbox9: none;
+    --checkbox10: none;
+    --checkbox11: none;
+    --checkbox12: none;
+    --checkbox13: none;
+    --checkbox14: none;
+    --checkbox15: none;
+    --checkbox16: none;
+    --checkbox17: none;
+    --checkbox18: none;
+    --checkbox19: none;
+    --checkbox20: none;
+    --checkbox21: none;
+    --checkbox22: none;
+    --checkbox23: none;
+    --checkbox24: none;
+    --checkbox25: none;
+    --checkbox26: none;
+    --checkbox27: none;
+    --checkbox28: none;
+    --checkbox29: none;
+    --checkbox30: none;
+    --checkbox31: none;
+}
+
+.ch0{
+    display: var(--checkbox0);
+}
+.ch1{
+    display: var(--checkbox1);
+}
+.ch2{
+    display: var(--checkbox2);
+}
+.ch3{
+    display: var(--checkbox3);
+}
+.ch4{
+    display: var(--checkbox4);
+}
+.ch5{
+    display: var(--checkbox5);
+}
+.ch6{
+    display: var(--checkbox6);
+}
+.ch7{
+    display: var(--checkbox7);
+}
+.ch8{
+    display: var(--checkbox8);
+}
+.ch9{
+    display: var(--checkbox9);
+}
+.ch10{
+    display: var(--checkbox10);
+}
+.ch11{
+    display: var(--checkbox11);
+}
+.ch12{
+    display: var(--checkbox12);
+}
+.ch13{
+    display: var(--checkbox13);
+}
+.ch14{
+    display: var(--checkbox14);
+}
+.ch15{
+    display: var(--checkbox15);
+}
+.ch16{
+    display: var(--checkbox16);
+}
+.ch17{
+    display: var(--checkbox17);
+}
+.ch18{
+    display: var(--checkbox18);
+}
+.ch19{
+    display: var(--checkbox19);
+}
+.ch20{
+    display: var(--checkbox20);
+}
+.ch21{
+    display: var(--checkbox21);
+}
+.ch22{
+    display: var(--checkbox22);
+}
+.ch23{
+    display: var(--checkbox23);
+}
+.ch24{
+    display: var(--checkbox24);
+}
+.ch25{
+    display: var(--checkbox25);
+}
+.ch26{
+    display: var(--checkbox26);
+}
+.ch27{
+    display: var(--checkbox27);
+}
+.ch28{
+    display: var(--checkbox28);
+}
+.ch29{
+    display: var(--checkbox29);
+}
+.ch30{
+    display: var(--checkbox30);
+}
+.ch31{
+    display: var(--checkbox31);
+}
+
+/* Show the next checkbox when the current one is checked */
+html:has(.ch0 input:checked) {
+    --checkbox1: block;
+}
+html:has(.ch1 input:checked) {
+    --checkbox2: block;
+}
+html:has(.ch2 input:checked) {
+    --checkbox3: block;
+}
+html:has(.ch3 input:checked) {
+    --checkbox4: block;
+}
+html:has(.ch4 input:checked) {
+    --checkbox5: block;
+}
+html:has(.ch5 input:checked) {
+    --checkbox6: block;
+}
+html:has(.ch6 input:checked) {
+    --checkbox7: block;
+}
+html:has(.ch7 input:checked) {
+    --checkbox8: block;
+}
+html:has(.ch8 input:checked) {
+    --checkbox9: block;
+}
+html:has(.ch9 input:checked) {
+    --checkbox10: block;
+}
+html:has(.ch10 input:checked) {
+    --checkbox11: block;
+}
+html:has(.ch11 input:checked) {
+    --checkbox12: block;
+}
+html:has(.ch12 input:checked) {
+    --checkbox13: block;
+}
+html:has(.ch13 input:checked) {
+    --checkbox14: block;
+}
+html:has(.ch14 input:checked) {
+    --checkbox15: block;
+}
+html:has(.ch15 input:checked) {
+    --checkbox16: block;
+}
+html:has(.ch16 input:checked) {
+    --checkbox17: block;
+}
+html:has(.ch17 input:checked) {
+    --checkbox18: block;
+}
+html:has(.ch18 input:checked) {
+    --checkbox19: block;
+}
+html:has(.ch19 input:checked) {
+    --checkbox20: block;
+}
+html:has(.ch20 input:checked) {
+    --checkbox21: block;
+}
+html:has(.ch21 input:checked) {
+    --checkbox22: block;
+}
+html:has(.ch22 input:checked) {
+    --checkbox23: block;
+}
+html:has(.ch23 input:checked) {
+    --checkbox24: block;
+}
+html:has(.ch24 input:checked) {
+    --checkbox25: block;
+}
+html:has(.ch25 input:checked) {
+    --checkbox26: block;
+}
+html:has(.ch26 input:checked) {
+    --checkbox27: block;
+}
+html:has(.ch27 input:checked) {
+    --checkbox28: block;
+}
+html:has(.ch28 input:checked) {
+    --checkbox29: block;
+}
+html:has(.ch29 input:checked) {
+    --checkbox30: block;
+}
+html:has(.ch30 input:checked) {
+    --checkbox31: block;
+}
+
+/* Hide the next checkbox when the current one is checked */
+
+html:has(.ch1 input:checked) {
+    --checkbox0: none;
+}
+html:has(.ch2 input:checked) {
+    --checkbox1: none;
+}
+html:has(.ch3 input:checked) {
+    --checkbox2: none;
+}
+html:has(.ch4 input:checked) {
+    --checkbox3: none;
+}
+html:has(.ch5 input:checked) {
+    --checkbox4: none;
+}
+html:has(.ch6 input:checked) {
+    --checkbox5: none;
+}
+html:has(.ch7 input:checked) {
+    --checkbox6: none;
+}
+html:has(.ch8 input:checked) {
+    --checkbox7: none;
+}
+html:has(.ch9 input:checked) {
+    --checkbox8: none;
+}
+html:has(.ch10 input:checked) {
+    --checkbox9: none;
+}
+html:has(.ch11 input:checked) {
+    --checkbox10: none;
+}
+html:has(.ch12 input:checked) {
+    --checkbox11: none;
+}
+html:has(.ch13 input:checked) {
+    --checkbox12: none;
+}
+html:has(.ch14 input:checked) {
+    --checkbox13: none;
+}
+html:has(.ch15 input:checked) {
+    --checkbox14: none;
+}
+html:has(.ch16 input:checked) {
+    --checkbox15: none;
+}
+html:has(.ch17 input:checked) {
+    --checkbox16: none;
+}
+html:has(.ch18 input:checked) {
+    --checkbox17: none;
+}
+html:has(.ch19 input:checked) {
+    --checkbox18: none;
+}
+html:has(.ch20 input:checked) {
+    --checkbox19: none;
+}
+html:has(.ch21 input:checked) {
+    --checkbox20: none;
+}
+html:has(.ch22 input:checked) {
+    --checkbox21: none;
+}
+html:has(.ch23 input:checked) {
+    --checkbox22: none;
+}
+html:has(.ch24 input:checked) {
+    --checkbox23: none;
+}
+html:has(.ch25 input:checked) {
+    --checkbox24: none;
+}
+html:has(.ch26 input:checked) {
+    --checkbox25: none;
+}
+html:has(.ch27 input:checked) {
+    --checkbox26: none;
+}
+html:has(.ch28 input:checked) {
+    --checkbox27: none;
+}
+html:has(.ch29 input:checked) {
+    --checkbox28: none;
+}
+html:has(.ch30 input:checked) {
+    --checkbox29: none;
+}
+html:has(.ch31 input:checked) {
+    --checkbox30: none;
+}
+
+/* Vytvoření ikonky zaškrtnutí */
+
 
 html {
     --t1: 0;
@@ -273,42 +651,44 @@ body:has(#toggle-5:checked) {
     top: 120px;
     left: 125px;
 }
-.h{
+
+.h {
     opacity: var(--h);
     top: 0;
     right: 125px;
 }
-.i{
+
+.i {
     opacity: var(--i);
     top: 25px;
     right: 100px;
 }
 
-.j{
+.j {
     opacity: var(--j);
     bottom: 25px;
     right: 100px;
 }
 
-.k{
+.k {
     opacity: var(--k);
     bottom: 0;
     left: -75px;
 }
 
-.l{
+.l {
     opacity: var(--l);
     bottom: 25px;
     left: -100px;
 }
 
-.m{
+.m {
     opacity: var(--m);
     top: 25px;
     left: -100px;
 }
 
-.n{
+.n {
     opacity: var(--n);
     top: 120px;
     left: -75px;
